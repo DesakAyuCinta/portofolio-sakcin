@@ -1,0 +1,502 @@
+/* Navbar Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  position: fixed; /*Agar posisi tetap ketika di scroll*/
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: plum; /* Palet warna*/
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo h1 {
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: black;
+}
+
+/* Sections styling */
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+}
+
+#home {
+  background-color: #f0f0f0;
+}
+
+#about {
+  background-color: #e0e0e0;
+}
+
+#skills {
+  background-color: #d0d0d0;
+}
+
+#experience {
+  background-color: #c0c0c0;
+}
+
+#contact {
+  background-color: #b0b0b0;
+}
+
+/* Responsive Design for Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: plum;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Home Section Styling */
+.home-section {
+  background: url("/image/Foto\ Saya.JPG") no-repeat center center/cover; /* Backroud pakai foto*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.home-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Overlay untuk membuat teks lebih terlihat jelas */
+}
+
+.home-content {
+  position: relative;
+  z-index: 1;
+}
+
+.home-content h2 {
+  font-size: 3rem;
+  font-family: "Georgia", serif;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "Arial", sans-serif;
+}
+
+/* About Section Styling */
+.about-section {
+  padding: 100px 20px;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tampilan profesional*/
+}
+
+.about-description {
+  flex: 1;
+}
+
+.about-description h2 {
+  font-size: 2.5rem;
+  color: #6a0dad; /* Warna ungu */
+  margin-bottom: 1rem;
+  font-family: "Georgia", serif;
+}
+
+.about-description p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-description h2 {
+    font-size: 2rem;
+  }
+
+  .about-description p {
+    font-size: 1rem;
+  }
+}
+
+/* Style Skill */
+.skills-section {
+  padding: 100px 20px;
+  background-color: #f4f4f4; /* Warna abu-abu lembut */
+  text-align: center;
+}
+
+.skills-section h2 {
+  font-size: 2.5rem;
+  color: #6a0dad; /* Warna plum */
+  margin-bottom: 2rem;
+  font-family: "Georgia", serif;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.skill-item {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+  padding: 1.5rem;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(
+    -10px
+  ); /* Efek hover saat di hover skill naik sedikit */
+}
+
+.skill-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.skill-item h3 {
+  font-size: 1.5rem;
+  color: #6a0dad; /* Warna plum */
+  margin-bottom: 1rem;
+}
+
+.skill-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  font-family: "Arial", sans-serif;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-item {
+    max-width: 100%;
+  }
+}
+
+/* Style Experience */
+.experience-section {
+  padding: 100px 20px;
+  background-color: #f4f4f4; /* Warna abu-abu lembut */
+  text-align: center;
+}
+
+.experience-section h2 {
+  font-size: 2.5rem;
+  color: #6a0dad; /* Warna plum */
+  margin-bottom: 2rem;
+  font-family: "Georgia", serif;
+}
+
+.experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.experience-item {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+  overflow: hidden;
+  max-width: 350px;
+  width: 100%;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+  transform: translateY(-10px); /* Efek hover */
+}
+
+.experience-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.experience-content {
+  padding: 1.5rem;
+}
+
+.experience-content h3 {
+  font-size: 1.5rem;
+  color: #6a0dad; /* Warna plum */
+  margin-bottom: 0.5rem;
+}
+
+.experience-content h4 {
+  font-size: 1.2rem;
+  color: #555; /* Warna abu-abu gelap untuk instansi */
+  margin-bottom: 0.5rem;
+}
+
+.experience-period {
+  font-size: 1rem;
+  color: #999; /* Warna abu-abu untuk periode */
+  margin-bottom: 1rem;
+}
+
+.experience-description {
+  font-size: 1rem;
+  color: #333; /* Warna teks utama */
+  line-height: 1.6;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-item {
+    max-width: 100%;
+  }
+}
+
+/* Contact Section Styling */
+.contact-section {
+  padding: 100px 20px;
+  background-color: #f4f4f4; /* Warna abu-abu lembut */
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  color: #6a0dad; /* Warna plum */
+  margin-bottom: 1rem;
+  font-family: "Georgia", serif;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow halus */
+  max-width: 600px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #6a0dad; /* Warna plum saat di fokus */
+}
+
+.submit-btn {
+  background-color: #6a0dad; /* Warna plum */
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #5a0cae; /* Warna plum gelap saat di-hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* Footer Style */
+/* Footer Section Styling */
+.footer-section {
+  background-color: #6a0dad; /* Warna plum */
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "Arial", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-nav {
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ccc; /* Warna saat di hover */
+}
+
+.footer-copyright p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .footer-nav a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+}
